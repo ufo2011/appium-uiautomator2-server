@@ -6,7 +6,6 @@ import org.apache.tools.ant.taskdefs.condition.Os
 
 buildscript {
     repositories {
-        jcenter()
         google()
     }
     dependencies {
@@ -34,7 +33,6 @@ allprojects {
         }
     }
     repositories {
-        jcenter()
         google()
     }
 }
