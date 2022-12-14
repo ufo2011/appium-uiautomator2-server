@@ -1,3 +1,10 @@
+## [5.7.6](https://github.com/appium/appium-uiautomator2-server/compare/v5.7.5...v5.7.6) (2022-12-14)
+
+
+### Bug Fixes
+
+* Use Build.VERSION.SDK_INT instead of API_LEVEL_ACTUAL ([#493](https://github.com/appium/appium-uiautomator2-server/issues/493)) ([0111c09](https://github.com/appium/appium-uiautomator2-server/commit/0111c096ac077772eef54b670e990cef42544580))
+
 ## [5.7.5](https://github.com/appium/appium-uiautomator2-server/compare/v5.7.4...v5.7.5) (2022-12-01)
 
 
