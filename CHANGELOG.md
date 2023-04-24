@@ -1,3 +1,10 @@
+## [5.8.1](https://github.com/appium/appium-uiautomator2-server/compare/v5.8.0...v5.8.1) (2023-04-24)
+
+
+### Miscellaneous Chores
+
+* Update Gradle version ([#505](https://github.com/appium/appium-uiautomator2-server/issues/505)) ([1bc1e6a](https://github.com/appium/appium-uiautomator2-server/commit/1bc1e6a729107eb3e09e26bae49faf91917f1acd))
+
 ## [5.8.0](https://github.com/appium/appium-uiautomator2-server/compare/v5.7.8...v5.8.0) (2023-03-09)
 
 
