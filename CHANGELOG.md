@@ -1,3 +1,10 @@
+## [5.8.2](https://github.com/appium/appium-uiautomator2-server/compare/v5.8.1...v5.8.2) (2023-04-28)
+
+
+### Bug Fixes
+
+* Tune the line break replacement logic ([#506](https://github.com/appium/appium-uiautomator2-server/issues/506)) ([77fb1d2](https://github.com/appium/appium-uiautomator2-server/commit/77fb1d240e454b54897a8ae7c34b1b0ec2761c11))
+
 ## [5.8.1](https://github.com/appium/appium-uiautomator2-server/compare/v5.8.0...v5.8.1) (2023-04-24)
 
 
