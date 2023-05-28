@@ -1,3 +1,10 @@
+## [5.9.1](https://github.com/appium/appium-uiautomator2-server/compare/v5.9.0...v5.9.1) (2023-05-28)
+
+
+### Bug Fixes
+
+* Revert "feat: settings API to get the topmost window from active package ([#508](https://github.com/appium/appium-uiautomator2-server/issues/508))" ([#509](https://github.com/appium/appium-uiautomator2-server/issues/509)) ([a43480b](https://github.com/appium/appium-uiautomator2-server/commit/a43480b23bd078f81197243001c1750e9834b56b))
+
 ## [5.9.0](https://github.com/appium/appium-uiautomator2-server/compare/v5.8.2...v5.9.0) (2023-05-26)
 
 
