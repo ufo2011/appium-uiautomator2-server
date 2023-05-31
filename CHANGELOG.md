@@ -1,3 +1,10 @@
+## [5.10.0](https://github.com/appium/appium-uiautomator2-server/compare/v5.9.1...v5.10.0) (2023-05-31)
+
+
+### Features
+
+* settings API to get the topmost window from active package ([#512](https://github.com/appium/appium-uiautomator2-server/issues/512)) ([60bded2](https://github.com/appium/appium-uiautomator2-server/commit/60bded242c3ae10f868d7c9c0d07054d5f2a584a))
+
 ## [5.9.1](https://github.com/appium/appium-uiautomator2-server/compare/v5.9.0...v5.9.1) (2023-05-28)
 
 
