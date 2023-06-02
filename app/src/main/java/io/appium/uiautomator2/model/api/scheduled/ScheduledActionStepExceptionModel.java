@@ -14,14 +14,22 @@
  * limitations under the License.
  */
 
-package io.appium.uiautomator2.model.api.gestures;
+package io.appium.uiautomator2.model.api.scheduled;
+
+import android.util.Log;
 
 import io.appium.uiautomator2.model.api.BaseModel;
-import io.appium.uiautomator2.model.api.ElementModel;
-import io.appium.uiautomator2.model.api.FindElementModel;
 
-public class ClickModel extends BaseModel {
-    public ElementModel origin;
-    public FindElementModel locator;
-    public PointModel offset;
+public class ScheduledActionStepExceptionModel extends BaseModel {
+    public String name;
+    public String message;
+    public String stacktrace;
+
+    public ScheduledActionStepExceptionModel() {}
+
+    public ScheduledActionStepExceptionModel(Throwable exc) {
+        this.name = exc.getClass().getName();
+        this.message = exc.getMessage();
+        this.stacktrace = Log.getStackTraceString(exc);
+    }
 }

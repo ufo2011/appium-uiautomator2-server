@@ -14,14 +14,9 @@
  * limitations under the License.
  */
 
-package io.appium.uiautomator2.model.api.gestures;
+package io.appium.uiautomator2.utils.actions_scheduler;
 
-import io.appium.uiautomator2.model.api.BaseModel;
-import io.appium.uiautomator2.model.api.ElementModel;
-import io.appium.uiautomator2.model.api.FindElementModel;
-
-public class ClickModel extends BaseModel {
-    public ElementModel origin;
-    public FindElementModel locator;
-    public PointModel offset;
+public interface Constants {
+    String STEP_SUBTYPE = "subtype";
+    String STEP_TYPE = "type";
 }

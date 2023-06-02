@@ -14,25 +14,34 @@
  * limitations under the License.
  */
 
-package io.appium.uiautomator2.handler.gestures;
+package io.appium.uiautomator2.handler;
 
 import static io.appium.uiautomator2.utils.ModelUtils.toModel;
 
+import io.appium.uiautomator2.common.exceptions.InvalidArgumentException;
 import io.appium.uiautomator2.handler.request.SafeRequestHandler;
 import io.appium.uiautomator2.http.AppiumResponse;
 import io.appium.uiautomator2.http.IHttpRequest;
-import io.appium.uiautomator2.model.api.gestures.ClickModel;
+import io.appium.uiautomator2.model.api.scheduled.ScheduledActionStepsHistoryModel;
+import io.appium.uiautomator2.model.api.scheduled.FindActionModel;
+import io.appium.uiautomator2.utils.actions_scheduler.ScheduledActionsManager;
 
-public class Click extends SafeRequestHandler {
+public class GetActionHistory extends SafeRequestHandler {
 
-    public Click(String mappedUri) {
+    public GetActionHistory(String mappedUri) {
         super(mappedUri);
     }
 
     @Override
     protected AppiumResponse safeHandle(IHttpRequest request) {
-        ClickModel clickModel = toModel(request, ClickModel.class);
-        io.appium.uiautomator2.utils.gestures.Click.perform(clickModel);
-        return new AppiumResponse(getSessionId(request));
+        FindActionModel model = toModel(request, FindActionModel.class);
+        ScheduledActionsManager manager = ScheduledActionsManager.getInstance();
+        ScheduledActionStepsHistoryModel history = manager.getHistory(model.name);
+        if (history == null) {
+            throw new InvalidArgumentException(String.format(
+                "The action name '%s' is not known. Have you scheduled it before?", model.name
+            ));
+        }
+        return new AppiumResponse(getSessionId(request), history);
     }
 }

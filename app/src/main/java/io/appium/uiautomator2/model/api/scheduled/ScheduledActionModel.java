@@ -14,14 +14,23 @@
  * limitations under the License.
  */
 
-package io.appium.uiautomator2.model.api.gestures;
+package io.appium.uiautomator2.model.api.scheduled;
 
+import java.util.List;
+
+import io.appium.uiautomator2.model.RequiredField;
 import io.appium.uiautomator2.model.api.BaseModel;
-import io.appium.uiautomator2.model.api.ElementModel;
-import io.appium.uiautomator2.model.api.FindElementModel;
 
-public class ClickModel extends BaseModel {
-    public ElementModel origin;
-    public FindElementModel locator;
-    public PointModel offset;
+public class ScheduledActionModel extends BaseModel {
+    @RequiredField
+    public String name;
+    @RequiredField
+    public List<ScheduledActionStepModel> steps;
+    public int times = 1;
+    public long intervalMs = 1000L; // in milliseconds
+    public int maxHistoryItems = 20;
+    public int maxPass = -1;
+    public int maxFail = -1;
+
+    public ScheduledActionModel() {}
 }
