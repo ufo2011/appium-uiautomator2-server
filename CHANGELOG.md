@@ -1,3 +1,10 @@
+## [5.11.0](https://github.com/appium/appium-uiautomator2-server/compare/v5.10.0...v5.11.0) (2023-06-02)
+
+
+### Features
+
+* Add a possibility of scheduling and unscheduling actions ([#510](https://github.com/appium/appium-uiautomator2-server/issues/510)) ([3d9f108](https://github.com/appium/appium-uiautomator2-server/commit/3d9f1082a890e7d834be112285b53660fb50f6db))
+
 ## [5.10.0](https://github.com/appium/appium-uiautomator2-server/compare/v5.9.1...v5.10.0) (2023-05-31)
 
 
