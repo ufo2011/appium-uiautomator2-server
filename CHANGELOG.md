@@ -1,3 +1,10 @@
+## [5.12.0](https://github.com/appium/appium-uiautomator2-server/compare/v5.11.1...v5.12.0) (2023-06-20)
+
+
+### Features
+
+* add snapshotMaxDepth to be able to detect deep depth elements ([#517](https://github.com/appium/appium-uiautomator2-server/issues/517)) ([9a40742](https://github.com/appium/appium-uiautomator2-server/commit/9a4074268c7b5fa1b168bee810d08975732a582e))
+
 ## [5.11.1](https://github.com/appium/appium-uiautomator2-server/compare/v5.11.0...v5.11.1) (2023-06-07)
 
 
