@@ -1,3 +1,10 @@
+## [5.12.1](https://github.com/appium/appium-uiautomator2-server/compare/v5.12.0...v5.12.1) (2023-06-29)
+
+
+### Bug Fixes
+
+* Ignore start coordinates for the very first move action ([#518](https://github.com/appium/appium-uiautomator2-server/issues/518)) ([8b505f2](https://github.com/appium/appium-uiautomator2-server/commit/8b505f2640979dfd342875321fdb5507123e0c8b))
+
 ## [5.12.0](https://github.com/appium/appium-uiautomator2-server/compare/v5.11.1...v5.12.0) (2023-06-20)
 
 
