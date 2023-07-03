@@ -1,3 +1,10 @@
+## [5.12.2](https://github.com/appium/appium-uiautomator2-server/compare/v5.12.1...v5.12.2) (2023-07-03)
+
+
+### Miscellaneous Chores
+
+* Improve exception stacktraces on actions parsing ([#522](https://github.com/appium/appium-uiautomator2-server/issues/522)) ([fae33d4](https://github.com/appium/appium-uiautomator2-server/commit/fae33d4fdb310ff8a1013e8aa7d5ad55ef5f37bc))
+
 ## [5.12.1](https://github.com/appium/appium-uiautomator2-server/compare/v5.12.0...v5.12.1) (2023-06-29)
 
 
