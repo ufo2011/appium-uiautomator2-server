@@ -1,3 +1,10 @@
+## [5.12.3](https://github.com/appium/appium-uiautomator2-server/compare/v5.12.2...v5.12.3) (2023-08-18)
+
+
+### Miscellaneous Chores
+
+* remove "/wd/hub" prefix to improve compatibility ([#526](https://github.com/appium/appium-uiautomator2-server/issues/526)) ([ac450c3](https://github.com/appium/appium-uiautomator2-server/commit/ac450c3d6a06b8af5f1d50cd022ea6d9d6fb49a1))
+
 ## [5.12.2](https://github.com/appium/appium-uiautomator2-server/compare/v5.12.1...v5.12.2) (2023-07-03)
 
 
