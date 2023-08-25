@@ -1,3 +1,10 @@
+## [5.12.4](https://github.com/appium/appium-uiautomator2-server/compare/v5.12.3...v5.12.4) (2023-08-25)
+
+
+### Miscellaneous Chores
+
+* **deps-dev:** bump semantic-release from 20.1.3 to 21.1.0 ([#528](https://github.com/appium/appium-uiautomator2-server/issues/528)) ([e1fd854](https://github.com/appium/appium-uiautomator2-server/commit/e1fd854676108dc0e83514bddf2986337eaae86e))
+
 ## [5.12.3](https://github.com/appium/appium-uiautomator2-server/compare/v5.12.2...v5.12.3) (2023-08-18)
 
 
