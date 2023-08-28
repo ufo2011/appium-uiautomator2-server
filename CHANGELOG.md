@@ -1,3 +1,10 @@
+## [5.12.5](https://github.com/appium/appium-uiautomator2-server/compare/v5.12.4...v5.12.5) (2023-08-28)
+
+
+### Miscellaneous Chores
+
+* **deps-dev:** bump conventional-changelog-conventionalcommits ([#529](https://github.com/appium/appium-uiautomator2-server/issues/529)) ([adf3ec8](https://github.com/appium/appium-uiautomator2-server/commit/adf3ec89dfff6d0291274c2ec4187e97a247b9f4))
+
 ## [5.12.4](https://github.com/appium/appium-uiautomator2-server/compare/v5.12.3...v5.12.4) (2023-08-25)
 
 
