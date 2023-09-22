@@ -1,3 +1,10 @@
+## [5.12.6](https://github.com/appium/appium-uiautomator2-server/compare/v5.12.5...v5.12.6) (2023-09-22)
+
+
+### Bug Fixes
+
+* Possible race condition NPE ([#535](https://github.com/appium/appium-uiautomator2-server/issues/535)) ([cce9e38](https://github.com/appium/appium-uiautomator2-server/commit/cce9e3843d6f840754867bf3c8761505108a5b7a))
+
 ## [5.12.5](https://github.com/appium/appium-uiautomator2-server/compare/v5.12.4...v5.12.5) (2023-08-28)
 
 
