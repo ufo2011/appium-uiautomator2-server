@@ -1,3 +1,11 @@
+## [5.12.7](https://github.com/appium/appium-uiautomator2-server/compare/v5.12.6...v5.12.7) (2023-10-19)
+
+
+### Miscellaneous Chores
+
+* **deps-dev:** bump appium-adb from 9.14.12 to 11.0.1 ([#540](https://github.com/appium/appium-uiautomator2-server/issues/540)) ([f0df958](https://github.com/appium/appium-uiautomator2-server/commit/f0df958397c4785dbe8df505d4cd8c16000ae1cc))
+* **deps-dev:** bump semantic-release from 21.1.2 to 22.0.5 ([#537](https://github.com/appium/appium-uiautomator2-server/issues/537)) ([a422db1](https://github.com/appium/appium-uiautomator2-server/commit/a422db1520de1094bbba3ec8053dd1eb397ce1c5))
+
 ## [5.12.6](https://github.com/appium/appium-uiautomator2-server/compare/v5.12.5...v5.12.6) (2023-09-22)
 
 
