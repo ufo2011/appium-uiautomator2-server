@@ -1,3 +1,10 @@
+## [5.12.11](https://github.com/appium/appium-uiautomator2-server/compare/v5.12.10...v5.12.11) (2023-10-21)
+
+
+### Miscellaneous Chores
+
+* Remove dependency to apache commons lib ([#562](https://github.com/appium/appium-uiautomator2-server/issues/562)) ([6820bc8](https://github.com/appium/appium-uiautomator2-server/commit/6820bc8892951bd8199cfaed117151ca598fa705))
+
 ## [5.12.10](https://github.com/appium/appium-uiautomator2-server/compare/v5.12.9...v5.12.10) (2023-10-21)
 
 
