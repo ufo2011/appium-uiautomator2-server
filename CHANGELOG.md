@@ -1,3 +1,10 @@
+## [5.12.10](https://github.com/appium/appium-uiautomator2-server/compare/v5.12.9...v5.12.10) (2023-10-21)
+
+
+### Miscellaneous Chores
+
+* **deps:** bump xerces:xercesImpl from 2.12.1 to 2.12.2 in /app ([#559](https://github.com/appium/appium-uiautomator2-server/issues/559)) ([b0b88d7](https://github.com/appium/appium-uiautomator2-server/commit/b0b88d7bddbf48fdf7730756094ccf78398a11c5))
+
 ## [5.12.9](https://github.com/appium/appium-uiautomator2-server/compare/v5.12.8...v5.12.9) (2023-10-21)
 
 
