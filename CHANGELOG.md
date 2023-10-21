@@ -1,3 +1,10 @@
+## [5.12.8](https://github.com/appium/appium-uiautomator2-server/compare/v5.12.7...v5.12.8) (2023-10-21)
+
+
+### Miscellaneous Chores
+
+* Update various packages ([#561](https://github.com/appium/appium-uiautomator2-server/issues/561)) ([406590e](https://github.com/appium/appium-uiautomator2-server/commit/406590e317d9ab001cc0db568db0ccb33da80b07))
+
 ## [5.12.7](https://github.com/appium/appium-uiautomator2-server/compare/v5.12.6...v5.12.7) (2023-10-19)
 
 
