@@ -1,3 +1,10 @@
+## [5.12.12](https://github.com/appium/appium-uiautomator2-server/compare/v5.12.11...v5.12.12) (2023-10-22)
+
+
+### Miscellaneous Chores
+
+* Remove espresso from dependencies list ([#563](https://github.com/appium/appium-uiautomator2-server/issues/563)) ([6a2d44d](https://github.com/appium/appium-uiautomator2-server/commit/6a2d44d981ee65fb4f814a838160ea8b54e696be))
+
 ## [5.12.11](https://github.com/appium/appium-uiautomator2-server/compare/v5.12.10...v5.12.11) (2023-10-21)
 
 
