@@ -1,3 +1,11 @@
+## [5.12.14](https://github.com/appium/appium-uiautomator2-server/compare/v5.12.13...v5.12.14) (2023-10-23)
+
+
+### Miscellaneous Chores
+
+* **deps-dev:** bump eslint-config-prettier from 8.10.0 to 9.0.0 ([#568](https://github.com/appium/appium-uiautomator2-server/issues/568)) ([b04c54e](https://github.com/appium/appium-uiautomator2-server/commit/b04c54e549e40208c77e46a081cc38e9d95dc100))
+* **deps:** bump com.github.vbmacher:java-cup-runtime in /app ([#567](https://github.com/appium/appium-uiautomator2-server/issues/567)) ([e802176](https://github.com/appium/appium-uiautomator2-server/commit/e80217624b5feb5e65d8928119bf1865577b3cf4))
+
 ## [5.12.13](https://github.com/appium/appium-uiautomator2-server/compare/v5.12.12...v5.12.13) (2023-10-23)
 
 
