@@ -1,3 +1,10 @@
+## [5.12.13](https://github.com/appium/appium-uiautomator2-server/compare/v5.12.12...v5.12.13) (2023-10-23)
+
+
+### Miscellaneous Chores
+
+* Bump junit version ([#564](https://github.com/appium/appium-uiautomator2-server/issues/564)) ([cfb5281](https://github.com/appium/appium-uiautomator2-server/commit/cfb528195e4dea41dd11a6ffd67ca873661dc16a))
+
 ## [5.12.12](https://github.com/appium/appium-uiautomator2-server/compare/v5.12.11...v5.12.12) (2023-10-22)
 
 
