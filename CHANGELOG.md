@@ -1,3 +1,10 @@
+## [5.12.15](https://github.com/appium/appium-uiautomator2-server/compare/v5.12.14...v5.12.15) (2023-10-30)
+
+
+### Miscellaneous Chores
+
+* **deps:** bump org.robolectric:robolectric in /app ([#570](https://github.com/appium/appium-uiautomator2-server/issues/570)) ([fa622c8](https://github.com/appium/appium-uiautomator2-server/commit/fa622c8f80174dccd526796e76811e19402873d6))
+
 ## [5.12.14](https://github.com/appium/appium-uiautomator2-server/compare/v5.12.13...v5.12.14) (2023-10-23)
 
 
