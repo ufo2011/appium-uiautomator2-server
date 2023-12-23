@@ -1,3 +1,10 @@
+## [5.12.18](https://github.com/appium/appium-uiautomator2-server/compare/v5.12.17...v5.12.18) (2023-12-23)
+
+
+### Miscellaneous Chores
+
+* **deps:** bump com.github.vbmacher:java-cup-runtime in /app ([#581](https://github.com/appium/appium-uiautomator2-server/issues/581)) ([49965bd](https://github.com/appium/appium-uiautomator2-server/commit/49965bd650c719194667460b168d278621d1d6eb))
+
 ## [5.12.17](https://github.com/appium/appium-uiautomator2-server/compare/v5.12.16...v5.12.17) (2023-12-02)
 
 
