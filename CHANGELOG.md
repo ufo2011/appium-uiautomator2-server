@@ -1,3 +1,10 @@
+## [5.15.2](https://github.com/appium/appium-uiautomator2-server/compare/v5.15.1...v5.15.2) (2023-12-30)
+
+
+### Bug Fixes
+
+* use displayManager.getDisplay only for upcoming androidx.test.uiautomator:uiautomator:2.3.0-beta01 ([#588](https://github.com/appium/appium-uiautomator2-server/issues/588)) ([61af265](https://github.com/appium/appium-uiautomator2-server/commit/61af2655207fa984cf505e754fe1146a08b67d55))
+
 ## [5.15.1](https://github.com/appium/appium-uiautomator2-server/compare/v5.15.0...v5.15.1) (2023-12-30)
 
 
