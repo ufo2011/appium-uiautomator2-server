@@ -1,3 +1,10 @@
+## [5.15.3](https://github.com/appium/appium-uiautomator2-server/compare/v5.15.2...v5.15.3) (2023-12-31)
+
+
+### Bug Fixes
+
+* add an empty AccessibilityNodeInfo creation for future androidx.test.uiautomator:uiautomator:2.3.0 update ([#589](https://github.com/appium/appium-uiautomator2-server/issues/589)) ([182d338](https://github.com/appium/appium-uiautomator2-server/commit/182d338c96f9cb62be43443da0b93fef675ca519))
+
 ## [5.15.2](https://github.com/appium/appium-uiautomator2-server/compare/v5.15.1...v5.15.2) (2023-12-30)
 
 
