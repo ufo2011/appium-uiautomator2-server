@@ -1,3 +1,10 @@
+## [6.0.2](https://github.com/appium/appium-uiautomator2-server/compare/v6.0.1...v6.0.2) (2024-01-09)
+
+
+### Miscellaneous Chores
+
+* get AccessibilityNodeInfo via obtain for lower versions ([#595](https://github.com/appium/appium-uiautomator2-server/issues/595)) ([0770985](https://github.com/appium/appium-uiautomator2-server/commit/07709859438d8d95f44fb8073c05a81feae52ef5))
+
 ## [6.0.1](https://github.com/appium/appium-uiautomator2-server/compare/v6.0.0...v6.0.1) (2024-01-06)
 
 
