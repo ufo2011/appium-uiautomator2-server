@@ -1,3 +1,10 @@
+## [6.0.3](https://github.com/appium/appium-uiautomator2-server/compare/v6.0.2...v6.0.3) (2024-01-10)
+
+
+### Bug Fixes
+
+* Revert the clearCache change for API 33+ ([#597](https://github.com/appium/appium-uiautomator2-server/issues/597)) ([719122f](https://github.com/appium/appium-uiautomator2-server/commit/719122fd3a30b1426e527f7019de97766c44b72f))
+
 ## [6.0.2](https://github.com/appium/appium-uiautomator2-server/compare/v6.0.1...v6.0.2) (2024-01-09)
 
 
