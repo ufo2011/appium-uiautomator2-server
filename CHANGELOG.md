@@ -1,3 +1,10 @@
+## [6.0.4](https://github.com/appium/appium-uiautomator2-server/compare/v6.0.3...v6.0.4) (2024-01-19)
+
+
+### Miscellaneous Chores
+
+* **deps-dev:** bump semantic-release from 22.0.12 to 23.0.0 ([#599](https://github.com/appium/appium-uiautomator2-server/issues/599)) ([d3b11a4](https://github.com/appium/appium-uiautomator2-server/commit/d3b11a4e411b37766839ed5b764fb1cb51fad21b))
+
 ## [6.0.3](https://github.com/appium/appium-uiautomator2-server/compare/v6.0.2...v6.0.3) (2024-01-10)
 
 
