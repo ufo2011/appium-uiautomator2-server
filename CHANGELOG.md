@@ -1,3 +1,10 @@
+## [6.0.6](https://github.com/appium/appium-uiautomator2-server/compare/v6.0.5...v6.0.6) (2024-01-26)
+
+
+### Miscellaneous Chores
+
+* **deps-dev:** bump appium-adb from 11.1.0 to 12.0.2 ([#607](https://github.com/appium/appium-uiautomator2-server/issues/607)) ([175139e](https://github.com/appium/appium-uiautomator2-server/commit/175139eadf6e4a0607dee61910849bb54e581eff))
+
 ## [6.0.5](https://github.com/appium/appium-uiautomator2-server/compare/v6.0.4...v6.0.5) (2024-01-25)
 
 
