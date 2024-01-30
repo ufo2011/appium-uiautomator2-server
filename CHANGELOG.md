@@ -1,3 +1,10 @@
+## [6.0.7](https://github.com/appium/appium-uiautomator2-server/compare/v6.0.6...v6.0.7) (2024-01-30)
+
+
+### Bug Fixes
+
+* Recycling of screenshot bitmaps ([#609](https://github.com/appium/appium-uiautomator2-server/issues/609)) ([2859d56](https://github.com/appium/appium-uiautomator2-server/commit/2859d561564f0606dfccf37b2b394af6c00a65b4))
+
 ## [6.0.6](https://github.com/appium/appium-uiautomator2-server/compare/v6.0.5...v6.0.6) (2024-01-26)
 
 
