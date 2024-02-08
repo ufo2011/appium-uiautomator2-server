@@ -1,3 +1,10 @@
+## [6.0.8](https://github.com/appium/appium-uiautomator2-server/compare/v6.0.7...v6.0.8) (2024-02-08)
+
+
+### Miscellaneous Chores
+
+* **deps:** bump org.json:json from 20231013 to 20240205 in /app ([#610](https://github.com/appium/appium-uiautomator2-server/issues/610)) ([4755a29](https://github.com/appium/appium-uiautomator2-server/commit/4755a29eb9b686d87458bbb83a1613fe5596f0e6))
+
 ## [6.0.7](https://github.com/appium/appium-uiautomator2-server/compare/v6.0.6...v6.0.7) (2024-01-30)
 
 
