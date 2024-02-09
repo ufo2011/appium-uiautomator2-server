@@ -14,24 +14,16 @@
  * limitations under the License.
  */
 
-package io.appium.uiautomator2.handler;
+package io.appium.uiautomator2.model.api.actions;
 
-import io.appium.uiautomator2.common.exceptions.InvalidElementStateException;
-import io.appium.uiautomator2.common.exceptions.UiAutomator2Exception;
+import java.util.List;
 
-public class TouchMove extends BaseTouchAction {
+import io.appium.uiautomator2.model.RequiredField;
+import io.appium.uiautomator2.model.api.BaseModel;
 
-    public TouchMove(String mappedUri) {
-        super(mappedUri);
-    }
+public class W3CActionsModel extends BaseModel {
+    @RequiredField
+    public List<W3CItemModel> actions;
 
-    @Override
-    protected void executeEvent() throws UiAutomator2Exception {
-        printEventDebugLine();
-
-        if (!getIc().touchMove(clickX, clickY)) {
-            throw new InvalidElementStateException(
-                    String.format("Cannot perform %s action at (%s, %s)", getName(), clickX, clickY));
-        }
-    }
+    public W3CActionsModel() {}
 }
