@@ -1,3 +1,10 @@
+## [6.0.9](https://github.com/appium/appium-uiautomator2-server/compare/v6.0.8...v6.0.9) (2024-02-09)
+
+
+### Miscellaneous Chores
+
+* **deps:** bump androidx.test.uiautomator:uiautomator in /app ([#611](https://github.com/appium/appium-uiautomator2-server/issues/611)) ([497ddc6](https://github.com/appium/appium-uiautomator2-server/commit/497ddc618bcadcb127f22916fa19d3d86524a251))
+
 ## [6.0.8](https://github.com/appium/appium-uiautomator2-server/compare/v6.0.7...v6.0.8) (2024-02-08)
 
 
