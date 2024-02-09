@@ -1,3 +1,24 @@
+## [7.0.0](https://github.com/appium/appium-uiautomator2-server/compare/v6.0.9...v7.0.0) (2024-02-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* Removed the following obsolete endpoints in favour of W3C actions :
+- /session/:sessionId/appium/tap
+- /session/:sessionId/touch/perform
+- /session/:sessionId/touch/longclick
+- /session/:sessionId/touch/drag
+- /session/:sessionId/touch/flick
+- /session/:sessionId/touch/multi/perform
+- /session/:sessionId/touch/down
+- /session/:sessionId/touch/up
+- /session/:sessionId/touch/move
+* The /session/:sessionId/touch/scroll endpoint has been renamed to /session/:sessionId/gestures/scroll_to
+
+### Features
+
+* Remove obsolete endpoints that are part of JSONWP touch spec ([#612](https://github.com/appium/appium-uiautomator2-server/issues/612)) ([08bf652](https://github.com/appium/appium-uiautomator2-server/commit/08bf65227c42cf7065d783c3bd630de651b39584))
+
 ## [6.0.9](https://github.com/appium/appium-uiautomator2-server/compare/v6.0.8...v6.0.9) (2024-02-09)
 
 
