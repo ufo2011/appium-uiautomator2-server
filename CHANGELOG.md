@@ -1,3 +1,10 @@
+## [7.0.2](https://github.com/appium/appium-uiautomator2-server/compare/v7.0.1...v7.0.2) (2024-03-04)
+
+
+### Miscellaneous Chores
+
+* Remove unused helpers ([#617](https://github.com/appium/appium-uiautomator2-server/issues/617)) ([bd5e0a0](https://github.com/appium/appium-uiautomator2-server/commit/bd5e0a094578a2ee580c18429ddec7021960ec33))
+
 ## [7.0.1](https://github.com/appium/appium-uiautomator2-server/compare/v7.0.0...v7.0.1) (2024-02-23)
 
 
