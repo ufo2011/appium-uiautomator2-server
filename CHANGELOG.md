@@ -1,3 +1,10 @@
+## [7.0.7](https://github.com/appium/appium-uiautomator2-server/compare/v7.0.6...v7.0.7) (2024-05-04)
+
+
+### Miscellaneous Chores
+
+* **deps:** bump com.android.tools.build:gradle in /app ([#631](https://github.com/appium/appium-uiautomator2-server/issues/631)) ([5bc5108](https://github.com/appium/appium-uiautomator2-server/commit/5bc5108244ba1bf2e3f2f91458aa1c443a4d0375))
+
 ## [7.0.6](https://github.com/appium/appium-uiautomator2-server/compare/v7.0.5...v7.0.6) (2024-05-04)
 
 
