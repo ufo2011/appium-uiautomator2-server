@@ -1,3 +1,11 @@
+## [7.0.6](https://github.com/appium/appium-uiautomator2-server/compare/v7.0.5...v7.0.6) (2024-05-04)
+
+
+### Miscellaneous Chores
+
+* **deps:** bump net.gcardone.junidecode:junidecode in /app ([#627](https://github.com/appium/appium-uiautomator2-server/issues/627)) ([6d29fc9](https://github.com/appium/appium-uiautomator2-server/commit/6d29fc995e837ecfc5eb6033547a4c5afcb9022b))
+* **deps:** bump org.robolectric:robolectric in /app ([#624](https://github.com/appium/appium-uiautomator2-server/issues/624)) ([84141da](https://github.com/appium/appium-uiautomator2-server/commit/84141da58d074fe9cf4209ede54b9e0229e68189))
+
 ## [7.0.5](https://github.com/appium/appium-uiautomator2-server/compare/v7.0.4...v7.0.5) (2024-03-19)
 
 
