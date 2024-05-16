@@ -1,3 +1,10 @@
+## [7.0.8](https://github.com/appium/appium-uiautomator2-server/compare/v7.0.7...v7.0.8) (2024-05-16)
+
+
+### Miscellaneous Chores
+
+* Update dev dependencies ([e0e7cad](https://github.com/appium/appium-uiautomator2-server/commit/e0e7cad7c100f0ddb4a68930ef6bb33404e16457))
+
 ## [7.0.7](https://github.com/appium/appium-uiautomator2-server/compare/v7.0.6...v7.0.7) (2024-05-04)
 
 
