@@ -1,3 +1,11 @@
+## [7.0.9](https://github.com/appium/appium-uiautomator2-server/compare/v7.0.8...v7.0.9) (2024-05-20)
+
+
+### Miscellaneous Chores
+
+* **deps:** bump com.google.code.gson:gson in /app ([#637](https://github.com/appium/appium-uiautomator2-server/issues/637)) ([4ee9449](https://github.com/appium/appium-uiautomator2-server/commit/4ee9449895e73cabb9ad96bf03d44408b936a3e5))
+* **deps:** bump org.robolectric:robolectric in /app ([#636](https://github.com/appium/appium-uiautomator2-server/issues/636)) ([6bdcd84](https://github.com/appium/appium-uiautomator2-server/commit/6bdcd84a38f79f990fe97b0038017eeb80533279))
+
 ## [7.0.8](https://github.com/appium/appium-uiautomator2-server/compare/v7.0.7...v7.0.8) (2024-05-16)
 
 
