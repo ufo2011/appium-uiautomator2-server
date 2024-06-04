@@ -1,3 +1,9 @@
+## [7.0.10](https://github.com/appium/appium-uiautomator2-server/compare/v7.0.9...v7.0.10) (2024-06-04)
+
+### Miscellaneous Chores
+
+* **deps-dev:** bump semantic-release from 23.1.1 to 24.0.0 and conventional-changelog-conventionalcommits to 8.0.0 ([#640](https://github.com/appium/appium-uiautomator2-server/issues/640)) ([fecffe9](https://github.com/appium/appium-uiautomator2-server/commit/fecffe910c45e5e5afee8f13aa2453a90d6d90ec))
+
 ## [7.0.9](https://github.com/appium/appium-uiautomator2-server/compare/v7.0.8...v7.0.9) (2024-05-20)
 
 
