@@ -1,3 +1,9 @@
+## [7.0.12](https://github.com/appium/appium-uiautomator2-server/compare/v7.0.11...v7.0.12) (2024-06-15)
+
+### Miscellaneous Chores
+
+* bump gradle env ([#644](https://github.com/appium/appium-uiautomator2-server/issues/644)) ([06c354b](https://github.com/appium/appium-uiautomator2-server/commit/06c354bb9d256d5b9de0ee14a3ec5e4da52fca7d))
+
 ## [7.0.11](https://github.com/appium/appium-uiautomator2-server/compare/v7.0.10...v7.0.11) (2024-06-14)
 
 ### Miscellaneous Chores
