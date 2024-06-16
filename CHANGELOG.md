@@ -1,3 +1,9 @@
+## [7.0.13](https://github.com/appium/appium-uiautomator2-server/compare/v7.0.12...v7.0.13) (2024-06-16)
+
+### Bug Fixes
+
+* The amount of runs to unschedule an action ([#645](https://github.com/appium/appium-uiautomator2-server/issues/645)) ([0992f59](https://github.com/appium/appium-uiautomator2-server/commit/0992f59e67f748de5e4cb812d3d358873dd627e4))
+
 ## [7.0.12](https://github.com/appium/appium-uiautomator2-server/compare/v7.0.11...v7.0.12) (2024-06-15)
 
 ### Miscellaneous Chores
