@@ -1,3 +1,9 @@
+## [7.0.14](https://github.com/appium/appium-uiautomator2-server/compare/v7.0.13...v7.0.14) (2024-06-18)
+
+### Miscellaneous Chores
+
+* Expose standard xml source attributes in the corresponding step ([#646](https://github.com/appium/appium-uiautomator2-server/issues/646)) ([5facb14](https://github.com/appium/appium-uiautomator2-server/commit/5facb140e35e9fe7d60c082a72060cd972900689))
+
 ## [7.0.13](https://github.com/appium/appium-uiautomator2-server/compare/v7.0.12...v7.0.13) (2024-06-16)
 
 ### Bug Fixes
