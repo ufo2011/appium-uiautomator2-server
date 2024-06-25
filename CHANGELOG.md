@@ -1,3 +1,10 @@
+## [7.0.15](https://github.com/appium/appium-uiautomator2-server/compare/v7.0.14...v7.0.15) (2024-06-25)
+
+### Miscellaneous Chores
+
+* **deps:** bump androidx.test:core from 1.5.0 to 1.6.0 in /app ([#648](https://github.com/appium/appium-uiautomator2-server/issues/648)) ([e04763f](https://github.com/appium/appium-uiautomator2-server/commit/e04763fd9294859a0f80e7a301ce98567ea9955a))
+* **deps:** bump androidx.test.ext:junit from 1.1.5 to 1.2.0 in /app ([#647](https://github.com/appium/appium-uiautomator2-server/issues/647)) ([a202cbe](https://github.com/appium/appium-uiautomator2-server/commit/a202cbe3224fb5231ca1189dd23f1a4e74ebf041))
+
 ## [7.0.14](https://github.com/appium/appium-uiautomator2-server/compare/v7.0.13...v7.0.14) (2024-06-18)
 
 ### Miscellaneous Chores
