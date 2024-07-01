@@ -1,3 +1,9 @@
+## [7.0.18](https://github.com/appium/appium-uiautomator2-server/compare/v7.0.17...v7.0.18) (2024-07-01)
+
+### Miscellaneous Chores
+
+* **deps:** bump com.github.bjoernq:unmockplugin in /app ([#653](https://github.com/appium/appium-uiautomator2-server/issues/653)) ([81c79f8](https://github.com/appium/appium-uiautomator2-server/commit/81c79f86fcb393bbb7e512d288fd2278ea7171aa))
+
 ## [7.0.17](https://github.com/appium/appium-uiautomator2-server/compare/v7.0.16...v7.0.17) (2024-06-28)
 
 ### Miscellaneous Chores
