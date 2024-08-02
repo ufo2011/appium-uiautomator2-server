@@ -1,3 +1,9 @@
+## [7.0.21](https://github.com/appium/appium-uiautomator2-server/compare/v7.0.20...v7.0.21) (2024-08-02)
+
+### Miscellaneous Chores
+
+* Replace fancy-log dependency with appium logger ([#657](https://github.com/appium/appium-uiautomator2-server/issues/657)) ([015c47a](https://github.com/appium/appium-uiautomator2-server/commit/015c47a134cff0d1e29e5d0907607ccbd6091d94))
+
 ## [7.0.20](https://github.com/appium/appium-uiautomator2-server/compare/v7.0.19...v7.0.20) (2024-07-12)
 
 ### Miscellaneous Chores
