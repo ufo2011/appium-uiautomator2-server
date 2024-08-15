@@ -1,3 +1,9 @@
+## [7.0.23](https://github.com/appium/appium-uiautomator2-server/compare/v7.0.22...v7.0.23) (2024-08-15)
+
+### Miscellaneous Chores
+
+* **deps:** bump androidx.test:runner from 1.6.1 to 1.6.2 in /app ([#659](https://github.com/appium/appium-uiautomator2-server/issues/659)) ([81deed1](https://github.com/appium/appium-uiautomator2-server/commit/81deed1a98510a323c8e371e2228a6a0d611ad41))
+
 ## [7.0.22](https://github.com/appium/appium-uiautomator2-server/compare/v7.0.21...v7.0.22) (2024-08-09)
 
 ### Miscellaneous Chores
