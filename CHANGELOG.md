@@ -1,3 +1,9 @@
+## [7.0.27](https://github.com/appium/appium-uiautomator2-server/compare/v7.0.26...v7.0.27) (2024-09-19)
+
+### Bug Fixes
+
+* Revert "fix: Always make sure we put valid utf8-encoded strings into attribut…" ([#663](https://github.com/appium/appium-uiautomator2-server/issues/663)) ([07f7aec](https://github.com/appium/appium-uiautomator2-server/commit/07f7aec4cec3f53a3a3148da5def02b3de116d5d))
+
 ## [7.0.26](https://github.com/appium/appium-uiautomator2-server/compare/v7.0.25...v7.0.26) (2024-09-18)
 
 ### Miscellaneous Chores
