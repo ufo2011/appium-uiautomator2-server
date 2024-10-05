@@ -1,3 +1,9 @@
+## [7.1.0](https://github.com/appium/appium-uiautomator2-server/compare/v7.0.28...v7.1.0) (2024-10-05)
+
+### Features
+
+* bump gradle version ([#665](https://github.com/appium/appium-uiautomator2-server/issues/665)) ([8880618](https://github.com/appium/appium-uiautomator2-server/commit/888061856c80410853b2db3f6fd06efca65d3615))
+
 ## [7.0.28](https://github.com/appium/appium-uiautomator2-server/compare/v7.0.27...v7.0.28) (2024-10-03)
 
 ### Miscellaneous Chores
