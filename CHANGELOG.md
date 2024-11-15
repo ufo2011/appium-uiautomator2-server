@@ -1,3 +1,9 @@
+## [7.1.3](https://github.com/appium/appium-uiautomator2-server/compare/v7.1.2...v7.1.3) (2024-11-15)
+
+### Miscellaneous Chores
+
+* **deps:** bump org.robolectric:robolectric from 4.13 to 4.14 in /app ([#669](https://github.com/appium/appium-uiautomator2-server/issues/669)) ([aeee62f](https://github.com/appium/appium-uiautomator2-server/commit/aeee62fe90b9e4373daadec903251ffc88627f90))
+
 ## [7.1.2](https://github.com/appium/appium-uiautomator2-server/compare/v7.1.1...v7.1.2) (2024-11-02)
 
 ### Miscellaneous Chores
