@@ -1,3 +1,10 @@
+## [7.1.4](https://github.com/appium/appium-uiautomator2-server/compare/v7.1.3...v7.1.4) (2024-11-18)
+
+### Miscellaneous Chores
+
+* **deps:** bump com.github.bjoernq:unmockplugin in /app ([#670](https://github.com/appium/appium-uiautomator2-server/issues/670)) ([3b51bb7](https://github.com/appium/appium-uiautomator2-server/commit/3b51bb7f4027b746870418e79bdaae4f50cc9226))
+* **deps:** bump net.gcardone.junidecode:junidecode in /app ([#671](https://github.com/appium/appium-uiautomator2-server/issues/671)) ([b58e16f](https://github.com/appium/appium-uiautomator2-server/commit/b58e16f4540ace584acc3c79af3ab3e9ce51b1d4))
+
 ## [7.1.3](https://github.com/appium/appium-uiautomator2-server/compare/v7.1.2...v7.1.3) (2024-11-15)
 
 ### Miscellaneous Chores
