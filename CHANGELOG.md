@@ -1,3 +1,9 @@
+## [7.1.7](https://github.com/appium/appium-uiautomator2-server/compare/v7.1.6...v7.1.7) (2024-12-06)
+
+### Miscellaneous Chores
+
+* **deps-dev:** bump @appium/support from 5.1.8 to 6.0.0 ([#674](https://github.com/appium/appium-uiautomator2-server/issues/674)) ([8939102](https://github.com/appium/appium-uiautomator2-server/commit/8939102b95fd1200583f77e4c9b337683d07fdde))
+
 ## [7.1.6](https://github.com/appium/appium-uiautomator2-server/compare/v7.1.5...v7.1.6) (2024-12-03)
 
 ### Miscellaneous Chores
