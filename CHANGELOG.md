@@ -1,3 +1,9 @@
+## [7.1.8](https://github.com/appium/appium-uiautomator2-server/compare/v7.1.7...v7.1.8) (2024-12-24)
+
+### Miscellaneous Chores
+
+* Reduce the amount of logs ([#675](https://github.com/appium/appium-uiautomator2-server/issues/675)) ([5b92ada](https://github.com/appium/appium-uiautomator2-server/commit/5b92ada848a3322c2524506d791569a3fcb8d2ae))
+
 ## [7.1.7](https://github.com/appium/appium-uiautomator2-server/compare/v7.1.6...v7.1.7) (2024-12-06)
 
 ### Miscellaneous Chores
