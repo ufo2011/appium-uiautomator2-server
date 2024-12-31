@@ -1,3 +1,9 @@
+## [7.1.9](https://github.com/appium/appium-uiautomator2-server/compare/v7.1.8...v7.1.9) (2024-12-31)
+
+### Bug Fixes
+
+* stuck client when socket client never initializes ([#676](https://github.com/appium/appium-uiautomator2-server/issues/676)) ([34161a3](https://github.com/appium/appium-uiautomator2-server/commit/34161a3bc2b9917ccf9d51b7e995f52c69df55f4))
+
 ## [7.1.8](https://github.com/appium/appium-uiautomator2-server/compare/v7.1.7...v7.1.8) (2024-12-24)
 
 ### Miscellaneous Chores
