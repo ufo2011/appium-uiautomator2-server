@@ -1,3 +1,9 @@
+## [7.1.11](https://github.com/appium/appium-uiautomator2-server/compare/v7.1.10...v7.1.11) (2025-01-07)
+
+### Miscellaneous Chores
+
+* Bump Eslint ([#679](https://github.com/appium/appium-uiautomator2-server/issues/679)) ([825a35f](https://github.com/appium/appium-uiautomator2-server/commit/825a35f86bce21f740f52442d3f1d0716d3a69c5))
+
 ## [7.1.10](https://github.com/appium/appium-uiautomator2-server/compare/v7.1.9...v7.1.10) (2025-01-07)
 
 ### Miscellaneous Chores
