@@ -21,7 +21,9 @@ import android.text.TextUtils;
 import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public enum Attribute {
     CHECKABLE(new String[]{"checkable"}),
@@ -42,6 +44,7 @@ public enum Attribute {
     SELECTED(new String[]{"selected"}),
     TEXT(new String[]{"text", "name"}),
     HINT(new String[]{"hint"}),
+    EXTRAS(new String[]{"extras"}),
     // The main difference of this attribute from the preceding one is that
     // it does not replace null values with empty strings
     ORIGINAL_TEXT(new String[]{"original-text"}, false, false),
@@ -52,16 +55,18 @@ public enum Attribute {
 
     private final String[] aliases;
     // Defines if the attribute is visible to the user from getAttribute call
-    private boolean isExposable = true;
+    private final boolean isExposable;
     // Defines if the attribute is visible to the user in the xml tree/xpath search
-    private boolean isExposableToXml = true;
+    private final boolean isExposableToXml;
 
     Attribute(String[] aliases) {
         this.aliases = aliases;
+        this.isExposable = true;
+        this.isExposableToXml = true;
     }
 
     Attribute(String[] aliases, boolean isExposable, boolean isExposableToXml) {
-        this(aliases);
+        this.aliases = aliases;
         this.isExposable = isExposable;
         this.isExposableToXml = isExposableToXml;
     }
@@ -93,6 +98,16 @@ public enum Attribute {
             }
         }
         return result.toArray(new String[0]);
+    }
+
+    public static Set<Attribute> xmlExposableAttributes() {
+        Set<Attribute> result = new HashSet<>();
+        for (Attribute attribute : Attribute.values()) {
+            if (attribute.isExposableToXml) {
+                result.add(attribute);
+            }
+        }
+        return result;
     }
 
     @Nullable

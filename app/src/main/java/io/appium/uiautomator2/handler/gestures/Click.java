@@ -18,17 +18,10 @@ package io.appium.uiautomator2.handler.gestures;
 
 import static io.appium.uiautomator2.utils.ModelUtils.toModel;
 
-import android.graphics.Point;
-import android.graphics.Rect;
-
 import io.appium.uiautomator2.handler.request.SafeRequestHandler;
 import io.appium.uiautomator2.http.AppiumResponse;
 import io.appium.uiautomator2.http.IHttpRequest;
-import io.appium.uiautomator2.model.AndroidElement;
-import io.appium.uiautomator2.model.AppiumUIA2Driver;
-import io.appium.uiautomator2.model.Session;
 import io.appium.uiautomator2.model.api.gestures.ClickModel;
-import io.appium.uiautomator2.model.internal.CustomUiDevice;
 
 public class Click extends SafeRequestHandler {
 
@@ -39,30 +32,7 @@ public class Click extends SafeRequestHandler {
     @Override
     protected AppiumResponse safeHandle(IHttpRequest request) {
         ClickModel clickModel = toModel(request, ClickModel.class);
-        String elementId = clickModel.origin == null ? null : clickModel.origin.getUnifiedId();
-        if (elementId == null) {
-            if (clickModel.offset == null) {
-                throw new IllegalArgumentException("Click offset coordinates must be provided " +
-                        "if element is not set");
-            }
-            CustomUiDevice.getInstance().getGestureController().click(
-                    clickModel.offset.toNativePoint()
-            );
-        } else {
-            Session session = AppiumUIA2Driver.getInstance().getSessionOrThrow();
-            AndroidElement element = session.getElementsCache().get(elementId);
-            if (clickModel.offset == null) {
-                element.click();
-            } else {
-                Rect bounds = element.getBounds();
-                Point location = new Point(
-                        bounds.left + clickModel.offset.x.intValue(),
-                        bounds.top + clickModel.offset.y.intValue()
-                );
-                CustomUiDevice.getInstance().getGestureController().click(location);
-            }
-        }
-
+        io.appium.uiautomator2.utils.gestures.Click.perform(clickModel);
         return new AppiumResponse(getSessionId(request));
     }
 }

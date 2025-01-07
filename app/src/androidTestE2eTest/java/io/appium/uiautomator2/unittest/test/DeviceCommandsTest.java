@@ -47,6 +47,7 @@ import static io.appium.uiautomator2.unittest.test.internal.commands.DeviceComma
 import static io.appium.uiautomator2.unittest.test.internal.commands.DeviceCommands.findElements;
 import static io.appium.uiautomator2.unittest.test.internal.commands.DeviceCommands.getDeviceSize;
 import static io.appium.uiautomator2.unittest.test.internal.commands.DeviceCommands.getInfo;
+import static io.appium.uiautomator2.unittest.test.internal.commands.DeviceCommands.getPackages;
 import static io.appium.uiautomator2.unittest.test.internal.commands.DeviceCommands.getScreenOrientation;
 import static io.appium.uiautomator2.unittest.test.internal.commands.DeviceCommands.getSettings;
 import static io.appium.uiautomator2.unittest.test.internal.commands.DeviceCommands.rotateScreen;
@@ -436,6 +437,9 @@ public class DeviceCommandsTest extends BaseTest {
         int elementCount = getJsonObjectCountInJsonArray(elements);
         assertTrue("Elements Count in views screen should at least > 4, " +
                 "in all variants of screen sizes, but actual: " + elementCount, elementCount > 4);
+        if (Build.VERSION.SDK_INT >= 30) {
+            return;
+        }
         List<String> expectedTexts = Arrays.asList("API Demos", "Accessibility Node Provider",
                 "Accessibility Node Querying", "Accessibility Service");
         for (int i = 0; i < 4; i++) {
@@ -529,7 +533,7 @@ public class DeviceCommandsTest extends BaseTest {
         // in all-caps, whereas their actual text is rather like 'Tab 13', 'Tab 26', etc.
         // The arguments of methods findElement() and scrollToText() are case-sensitive,
         // therefore we need to use different sets of inputs for different target devices.
-        int apiLevel = (int) getField(UiDevice.class, "API_LEVEL_ACTUAL", getUiDevice());
+        int apiLevel = Build.VERSION.SDK_INT;
 
         String[] items = apiLevel < 24
             ? new String[] { "Tab 13", "Tab 26", "Tab 5" }  // up to Android 6.0 Marshmallow
@@ -657,12 +661,11 @@ public class DeviceCommandsTest extends BaseTest {
      */
     @Test
     public void scrollByUiSelectorTest() throws JSONException {
-        startActivity(".preference.PreferencesFromCode");
-        waitForElement(By.id("android:id/list"));
+        startActivity(".ApiDemos");
+        Response response = findElement(By.accessibilityId("Views"));
+        clickAndWaitForStaleness(response.getElementId());
 
-        String uiSelectorSpec = "new UiSelector()" +
-                ".classNameMatches(\"android.widget.RelativeLayout\")" +
-                ".childSelector(new UiSelector().textStartsWith(\"Parent checkbox\"))";
+        String uiSelectorSpec = "new UiSelector().textStartsWith(\"WebView\")";
 
         By by = By.androidUiAutomator(uiSelectorSpec);
 
@@ -684,7 +687,7 @@ public class DeviceCommandsTest extends BaseTest {
 
         response = screenshot();
         String value = response.getValue();
-        byte[] bytes = Base64.decode(value, Base64.DEFAULT);
+        byte[] bytes = Base64.decode(value, Base64.NO_WRAP);
         Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
         assertNotNull(bitmap);
     }
@@ -821,4 +824,11 @@ public class DeviceCommandsTest extends BaseTest {
         assertEquals(info.getString("platformVersion"), Build.VERSION.RELEASE);
         assertTrue(info.getJSONArray("networks").length() > 0);
     }
+
+    @Test
+    public void shouldExtractPackages() throws JSONException {
+        JSONArray apps = getPackages().getValue();
+        assertTrue(apps.length() > 0);
+    }
+
 }

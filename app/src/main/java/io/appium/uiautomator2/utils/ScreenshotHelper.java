@@ -28,8 +28,6 @@ import android.view.Display;
 
 import androidx.annotation.Nullable;
 
-import org.apache.commons.io.IOUtils;
-
 import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -60,14 +58,16 @@ public class ScreenshotHelper {
             return takeDeviceScreenshot(String.class);
         }
 
-        Bitmap screenshot = takeDeviceScreenshot(Bitmap.class);
+        Bitmap fullScreenshot = takeDeviceScreenshot(Bitmap.class);
+        Bitmap elementScreenshot = null;
         try {
-            final Bitmap elementScreenshot = crop(screenshot, cropArea);
-            screenshot.recycle();
-            screenshot = elementScreenshot;
-            return Base64.encodeToString(compress(screenshot), Base64.DEFAULT);
+            elementScreenshot = crop(fullScreenshot, cropArea);
+            return Base64.encodeToString(compress(elementScreenshot), Base64.NO_WRAP);
         } finally {
-            screenshot.recycle();
+            fullScreenshot.recycle();
+            if (elementScreenshot != null && elementScreenshot != fullScreenshot) {
+                elementScreenshot.recycle();
+            }
         }
     }
 
@@ -95,12 +95,12 @@ public class ScreenshotHelper {
             try {
                 ParcelFileDescriptor pfd = automation.executeShellCommand("screencap -p");
                 try (InputStream is = new FileInputStream(pfd.getFileDescriptor())) {
-                    byte[] pngBytes = IOUtils.toByteArray(is);
+                    byte[] pngBytes = StringHelpers.inputStreamToByteArray(is);
                     if (pngBytes.length <= PNG_MAGIC_LENGTH) {
                         throw new IllegalStateException("screencap returned an invalid response");
                     }
                     if (outputType == String.class) {
-                        return outputType.cast(Base64.encodeToString(pngBytes, Base64.DEFAULT));
+                        return outputType.cast(Base64.encodeToString(pngBytes, Base64.NO_WRAP));
                     }
                     screenshot = BitmapFactory.decodeByteArray(
                         pngBytes,
@@ -136,7 +136,7 @@ public class ScreenshotHelper {
 
         if (outputType == String.class) {
             try {
-                return outputType.cast(Base64.encodeToString(compress(screenshot), Base64.DEFAULT));
+                return outputType.cast(Base64.encodeToString(compress(screenshot), Base64.NO_WRAP));
             } finally {
                 screenshot.recycle();
             }

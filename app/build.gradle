@@ -5,8 +5,8 @@ buildscript {
         maven { url 'https://jitpack.io' }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.1.2'
-        classpath 'com.github.bjoernq:unmockplugin:0.7.9'
+        classpath 'com.android.tools.build:gradle:8.7.3'
+        classpath 'com.github.bjoernq:unmockplugin:0.9.0'
     }
 }
 
@@ -14,17 +14,17 @@ apply plugin: 'com.android.application'
 apply plugin: 'de.mobilej.unmock'
 
 android {
-    compileSdkVersion 30
+    compileSdk 34
     defaultConfig {
         applicationId 'io.appium.uiautomator2'
         minSdkVersion 21
-        targetSdkVersion 30
-        versionCode 105
+        targetSdkVersion 34
+        versionCode 202
         archivesBaseName = 'appium-uiautomator2'
         /**
          * versionName should be updated and inline with version in package.json for every npm release.
          */
-        versionName '5.5.0'
+        versionName '7.1.11'
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
     buildTypes {
@@ -50,7 +50,25 @@ android {
         }
     }
     testOptions {
-        unitTests.returnDefaultValues = true
+        unitTests {
+            includeAndroidResources = true
+            returnDefaultValues = true
+            all {
+                it.jvmArgs([
+                        '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
+                        '--add-opens', 'java.base/java.time=ALL-UNNAMED',
+                        '--add-opens', 'java.base/java.time.format=ALL-UNNAMED',
+                        '--add-opens', 'java.base/java.util=ALL-UNNAMED',
+                        '--add-opens', 'java.base/java.util.concurrent=ALL-UNNAMED',
+                        '--add-exports', 'java.base/sun.nio.ch=ALL-UNNAMED',
+                        '--add-opens', 'java.base/java.lang.reflect=ALL-UNNAMED',
+                        '--add-opens', 'java.base/java.io=ALL-UNNAMED',
+                        '--add-opens', 'java.base/java.net=ALL-UNNAMED',
+                        '--add-opens', 'java.base/sun.net.www.protocol.http=ALL-UNNAMED',
+                        '--add-exports', 'jdk.unsupported/sun.misc=ALL-UNNAMED',
+                ])
+            }
+        }
     }
     packagingOptions {
         resources {
@@ -60,6 +78,7 @@ android {
     lint {
         abortOnError false
     }
+    namespace 'io.appium.uiautomator2.test'
 }
 
 unMock {
@@ -72,34 +91,29 @@ unMock {
 dependencies {
     // https://download.eclipse.org/oomph/archive/reports/download.eclipse.org/releases/2021-09/index/org.eclipse.wst.xml.xpath2.processor_2.1.101.v201903222120.html
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'androidx.test.uiautomator:uiautomator:2.2.0'
-    implementation 'androidx.test:core:1.4.0'
-    implementation 'androidx.test:runner:1.4.0'
-    implementation 'com.google.code.gson:gson:2.8.9'
-    //noinspection GradleDependency
-    implementation 'commons-io:commons-io:2.6'
+    implementation 'androidx.test.uiautomator:uiautomator:2.3.0'
+    implementation 'androidx.test:core:1.6.1'
+    implementation 'androidx.test:runner:1.6.2'
+    implementation 'com.google.code.gson:gson:2.11.0'
     implementation 'io.netty:netty-all:4.0.41.Final'
-    implementation 'net.gcardone.junidecode:junidecode:0.4.1'
+    implementation 'net.gcardone.junidecode:junidecode:0.5.2'
     // The next three dependencies are required for XPath search to work
-    implementation 'xerces:xercesImpl:2.12.1'
-    implementation 'com.github.vbmacher:java-cup-runtime:11b-20160615-1'
+    implementation 'xerces:xercesImpl:2.12.2'
+    implementation 'com.github.vbmacher:java-cup-runtime:11b-20160615-3'
     //noinspection GradleDependency
     implementation 'com.ibm.icu:icu4j:60.2'
-    unmock 'org.robolectric:android-all:7.1.0_r7-robolectric-0'
-    testImplementation 'androidx.test.ext:junit:1.1.3'
-    //noinspection GradleDependency
-    testImplementation 'junit:junit:4.12'
-    testImplementation 'org.json:json:20190722'
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'androidx.test.ext:junit:1.2.1'
+    testImplementation 'org.json:json:20241224'
     testImplementation 'org.powermock:powermock-api-mockito2:2.0.9'
     testImplementation 'org.powermock:powermock-classloading-xstream:2.0.9'
     testImplementation 'org.powermock:powermock-module-junit4-rule:2.0.9'
     testImplementation 'org.powermock:powermock-module-junit4:2.0.9'
-    testImplementation 'org.robolectric:robolectric:4.5.1'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    testImplementation 'org.robolectric:robolectric:4.14.1'
+    testImplementation 'org.javassist:javassist:3.30.2-GA'
+    androidTestImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
     androidTestImplementation 'com.squareup.okhttp:okhttp:2.7.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-web:3.4.0'
-    //noinspection GradleDependency
-    androidTestImplementation 'junit:junit:4.12'
 }
 
 task installAUT(type: Exec) {

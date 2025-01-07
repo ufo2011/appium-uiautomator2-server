@@ -20,8 +20,6 @@ import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentat
 
 import android.graphics.Point;
 import android.graphics.Rect;
-
-import androidx.test.platform.app.InstrumentationRegistry;
 import androidx.test.uiautomator.Direction;
 import androidx.test.uiautomator.UiObject2;
 
@@ -34,43 +32,70 @@ import static io.appium.uiautomator2.utils.ReflectionUtils.getField;
 import static io.appium.uiautomator2.utils.ReflectionUtils.getMethod;
 import static io.appium.uiautomator2.utils.ReflectionUtils.invoke;
 
-public class Gestures {
-    private final Object wrappedInstance;
+import io.appium.uiautomator2.utils.ReflectionUtils;
 
-    Gestures(Object wrappedInstance) {
-        this.wrappedInstance = wrappedInstance;
+public class Gestures {
+    private final Class<?> wrappedClass;
+    private final int displayId;
+
+    Gestures(int displayId) {
+        this.displayId = displayId;
+        // https://androidx.tech/artifacts/test.uiautomator/uiautomator/2.3.0-beta01-source/androidx/test/uiautomator/Gestures.java.html
+        this.wrappedClass = ReflectionUtils.getClass("androidx.test.uiautomator.Gestures");
+    }
+
+    public int getDisplayId() {
+        return displayId;
     }
 
     public PointerGesture drag(Point start, Point end, int speed) {
-        Method dragMethod = getMethod(wrappedInstance.getClass(), "drag",
-                Point.class, Point.class, int.class);
-        return new PointerGesture(invoke(dragMethod, wrappedInstance, start, end, speed));
-    }
-
-    private static PointerGesture[] toGesturesArray(Object result) {
-        List<PointerGesture> list = new ArrayList<>();
-        for (int i = 0; i < Array.getLength(result); ++i) {
-            list.add(new PointerGesture(Array.get(result, i)));
-        }
-        return list.toArray(new PointerGesture[0]);
+        Method dragMethod = getMethod(
+                wrappedClass, "drag",
+                Point.class, Point.class, int.class, int.class
+        );
+        return new PointerGesture(
+                invoke(dragMethod, wrappedClass, start, end, speed, displayId),
+                displayId
+        );
     }
 
     public PointerGesture[] pinchClose(Rect area, float percent, int speed) {
-        Method pinchCloseMethod = getMethod(wrappedInstance.getClass(), "pinchClose",
-                Rect.class, float.class, int.class);
-        return toGesturesArray(invoke(pinchCloseMethod, wrappedInstance, area, percent, speed));
+        Method pinchCloseMethod = getMethod(
+                wrappedClass, "pinchClose",
+                Rect.class, float.class, int.class, int.class
+        );
+        return toGesturesArray(
+                invoke(pinchCloseMethod, wrappedClass, area, percent, speed, displayId)
+        );
     }
 
     public PointerGesture[] pinchOpen(Rect area, float percent, int speed) {
-        Method pinchOpenMethod = getMethod(wrappedInstance.getClass(), "pinchOpen",
-                Rect.class, float.class, int.class);
-        return toGesturesArray(invoke(pinchOpenMethod, wrappedInstance, area, percent, speed));
+        Method pinchOpenMethod = getMethod(
+                wrappedClass, "pinchOpen",
+                Rect.class, float.class, int.class, int.class
+        );
+        return toGesturesArray(
+                invoke(pinchOpenMethod, wrappedClass, area, percent, speed, displayId)
+        );
     }
 
     public PointerGesture swipe(Rect area, Direction direction, float percent, int speed) {
-        Method swipeRectMethod = getMethod(wrappedInstance.getClass(), "swipeRect",
-                Rect.class, Direction.class, float.class, int.class);
-        return new PointerGesture(invoke(swipeRectMethod, wrappedInstance, area, direction, percent, speed));
+        Method swipeRectMethod = getMethod(
+                wrappedClass, "swipeRect",
+                Rect.class, Direction.class, float.class, int.class, int.class
+        );
+        return new PointerGesture(
+                invoke(swipeRectMethod, wrappedClass, area, direction, percent, speed, displayId),
+                displayId
+        );
+    }
+
+    private PointerGesture[] toGesturesArray(Object result) {
+        List<PointerGesture> list = new ArrayList<>();
+        for (int i = 0; i < Array.getLength(result); ++i) {
+            list.add(new PointerGesture(Array.get(result, i), displayId));
+        }
+        return list.toArray(new PointerGesture[0]);
     }
 
     public static float getDisplayDensity() {

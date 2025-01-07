@@ -33,6 +33,7 @@ import java.util.List;
 import io.appium.uiautomator2.core.AxNodeInfoHelper;
 import io.appium.uiautomator2.model.internal.CustomUiDevice;
 import io.appium.uiautomator2.utils.Attribute;
+import io.appium.uiautomator2.utils.ContentSizeHelpers;
 import io.appium.uiautomator2.utils.ElementHelpers;
 import io.appium.uiautomator2.utils.Logger;
 import io.appium.uiautomator2.utils.PositionHelper;
@@ -93,7 +94,7 @@ public class UiObject2Element extends BaseElement {
                 result = element.getResourceName();
                 break;
             case CONTENT_SIZE:
-                result = ElementHelpers.getContentSize(this);
+                result = ContentSizeHelpers.getContentSize(this);
                 break;
             case ENABLED:
                 result = element.isEnabled();
@@ -148,6 +149,10 @@ public class UiObject2Element extends BaseElement {
                         ? null
                         : (dstAttribute == Attribute.SELECTION_END ? selectionRange.second : selectionRange.first);
                 break;
+            case EXTRAS:
+                // Do not restrict if the 'extras' is available in each element attribute
+                result = getExtrasAsString(toAxNodeInfo(element));
+                break;
             default:
                 throw generateNoAttributeException(attr);
         }
@@ -155,6 +160,11 @@ public class UiObject2Element extends BaseElement {
             return null;
         }
         return (result instanceof String) ? (String) result : String.valueOf(result);
+    }
+
+    @Override
+    public int getDisplayId() {
+        return element.getDisplayId();
     }
 
     @Override

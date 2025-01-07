@@ -243,7 +243,7 @@ public class DeviceCommands {
         params.put("multiple", false);
 
         postBody.put("params", params);
-        return Client.post("/touch/scroll", postBody);
+        return Client.post("/gestures/scroll_to", postBody);
     }
 
     /**
@@ -266,7 +266,7 @@ public class DeviceCommands {
         params.put("multiple", false);
 
         postBody.put("params", params);
-        return Client.post("/touch/scroll", postBody);
+        return Client.post("/gestures/scroll_to", postBody);
     }
 
     /**
@@ -305,7 +305,7 @@ public class DeviceCommands {
         }
 
         postBody.put("params", params);
-        return Client.post("/touch/scroll", postBody);
+        return Client.post("/gestures/scroll_to", postBody);
     }
 
     /**
@@ -367,5 +367,14 @@ public class DeviceCommands {
         JSONObject payload = new JSONObject();
         payload.put("actions", actions);
         return Client.post("/actions", payload);
+    }
+
+    /**
+     * Gets the system amd installed applications with main activity
+     *
+     * @return Response from UiAutomator2 server
+     */
+    public static Response getPackages() {
+        return Client.get("/appium/device/apps");
     }
 }

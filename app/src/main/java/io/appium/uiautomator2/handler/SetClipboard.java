@@ -40,7 +40,7 @@ public class SetClipboard extends SafeRequestHandler {
     }
 
     private static String fromBase64String(String s) {
-        return new String(Base64.decode(s, Base64.DEFAULT), StandardCharsets.UTF_8);
+        return new String(Base64.decode(s, Base64.NO_WRAP), StandardCharsets.UTF_8);
     }
 
     @Override
@@ -57,7 +57,7 @@ public class SetClipboard extends SafeRequestHandler {
             throw new InvalidArgumentException(
                     String.format("Only '%s' content types are supported. '%s' is given instead",
                             ClipDataType.supportedDataTypes(),
-                            contentType));
+                            model.contentType == null ? contentType.name() : model.contentType));
         }
         return new AppiumResponse(getSessionId(request));
     }

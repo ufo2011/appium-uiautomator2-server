@@ -16,7 +16,6 @@
 
 package io.appium.uiautomator2.model;
 
-import android.annotation.TargetApi;
 import android.os.Build;
 import android.util.Pair;
 import android.view.accessibility.AccessibilityNodeInfo;
@@ -36,12 +35,12 @@ import java.util.Set;
 
 import io.appium.uiautomator2.core.AxNodeInfoHelper;
 import io.appium.uiautomator2.model.settings.AllowInvisibleElements;
+import io.appium.uiautomator2.model.settings.IncludeExtrasInPageSource;
+import io.appium.uiautomator2.model.settings.SnapshotMaxDepth;
 import io.appium.uiautomator2.model.settings.Settings;
 import io.appium.uiautomator2.utils.Attribute;
 import io.appium.uiautomator2.utils.Logger;
 
-import static androidx.test.internal.util.Checks.checkNotNull;
-import static io.appium.uiautomator2.core.AxNodeInfoExtractor.toAxNodeInfo;
 import static io.appium.uiautomator2.utils.ReflectionUtils.setField;
 import static io.appium.uiautomator2.utils.StringHelpers.charSequenceToNullableString;
 
@@ -49,11 +48,8 @@ import static io.appium.uiautomator2.utils.StringHelpers.charSequenceToNullableS
  * A UiElement that gets attributes via the Accessibility API.
  * https://android.googlesource.com/platform/frameworks/testing/+/476328047e3f82d6d9be8ab23f502a670613f94c/uiautomator/library/src/com/android/uiautomator/core/AccessibilityNodeInfoDumper.java
  */
-@TargetApi(18)
 public class UiElementSnapshot extends UiElement<AccessibilityNodeInfo, UiElementSnapshot> {
     private final static String ROOT_NODE_NAME = "hierarchy";
-    // https://github.com/appium/appium/issues/12545
-    private final static int DEFAULT_MAX_DEPTH = 70;
     // The same order will be used for node attributes in xml page source
     public final static Attribute[] SUPPORTED_ATTRIBUTES = new Attribute[]{
             Attribute.INDEX, Attribute.PACKAGE, Attribute.CLASS, Attribute.TEXT,
@@ -62,7 +58,7 @@ public class UiElementSnapshot extends UiElement<AccessibilityNodeInfo, UiElemen
             Attribute.FOCUSABLE, Attribute.FOCUSED, Attribute.LONG_CLICKABLE,
             Attribute.PASSWORD, Attribute.SCROLLABLE, Attribute.SELECTION_START,
             Attribute.SELECTION_END, Attribute.SELECTED, Attribute.BOUNDS, Attribute.DISPLAYED,
-            Attribute.HINT
+            Attribute.HINT, Attribute.EXTRAS
             // Skip CONTENT_SIZE as it is quite expensive to compute it for each element
     };
     private final static Attribute[] TOAST_NODE_ATTRIBUTES = new Attribute[] {
@@ -79,7 +75,7 @@ public class UiElementSnapshot extends UiElement<AccessibilityNodeInfo, UiElemen
 
     private UiElementSnapshot(AccessibilityNodeInfo node, int index, int depth, int maxDepth,
                               Set<Attribute> includedAttributes) {
-        super(checkNotNull(node));
+        super(Objects.requireNonNull(node));
         this.depth = depth;
         this.maxDepth = maxDepth;
         this.index = index;
@@ -92,7 +88,7 @@ public class UiElementSnapshot extends UiElement<AccessibilityNodeInfo, UiElemen
 
     private UiElementSnapshot(AccessibilityNodeInfo node, int index, int depth,
                               Set<Attribute> includedAttributes) {
-        this(node, index, depth, DEFAULT_MAX_DEPTH, includedAttributes);
+        this(node, index, depth, Settings.get(SnapshotMaxDepth.class).getValue(), includedAttributes);
     }
 
     private UiElementSnapshot(AccessibilityNodeInfo[] childNodes,
@@ -100,7 +96,7 @@ public class UiElementSnapshot extends UiElement<AccessibilityNodeInfo, UiElemen
         super(null);
         this.depth = 0;
         this.index = 0;
-        this.maxDepth = DEFAULT_MAX_DEPTH;
+        this.maxDepth = Settings.get(SnapshotMaxDepth.class).getValue();
         Map<Attribute, Object> attribs = new LinkedHashMap<>();
         putAttribute(attribs, Attribute.INDEX, this.index);
         putAttribute(attribs, Attribute.CLASS, ROOT_NODE_NAME);
@@ -167,6 +163,8 @@ public class UiElementSnapshot extends UiElement<AccessibilityNodeInfo, UiElemen
                 } else {
                     return null;
                 }
+            case EXTRAS:
+                return BaseElement.getExtrasAsString(node);
             case ORIGINAL_TEXT:
                 return AxNodeInfoHelper.getText(node, false);
             case BOUNDS:
@@ -183,6 +181,10 @@ public class UiElementSnapshot extends UiElement<AccessibilityNodeInfo, UiElemen
     private Map<Attribute, Object> collectAttributes() {
         Map<Attribute, Object> result = new LinkedHashMap<>();
         for (Attribute attr : SUPPORTED_ATTRIBUTES) {
+            if (attr.equals(Attribute.EXTRAS) &&
+                    !Settings.get(IncludeExtrasInPageSource.class).getValue()) {
+                continue;
+            }
             if (includedAttributes.isEmpty() || includedAttributes.contains(attr)) {
                 putAttribute(result, attr, getNodeAttributeValue(attr));
             }
@@ -239,10 +241,11 @@ public class UiElementSnapshot extends UiElement<AccessibilityNodeInfo, UiElemen
 
         List<UiElementSnapshot> children = new ArrayList<>(childCount);
         boolean areInvisibleElementsAllowed = Settings.get(AllowInvisibleElements.class).getValue();
+        List<Integer> nullNodeIndexes = new ArrayList<>();
         for (int index = 0; index < childCount; ++index) {
             AccessibilityNodeInfo child = node.getChild(index);
             if (child == null) {
-                Logger.info(String.format("The child node #%s of %s is null", index, node));
+                nullNodeIndexes.add(index);
                 continue;
             }
 
@@ -250,6 +253,11 @@ public class UiElementSnapshot extends UiElement<AccessibilityNodeInfo, UiElemen
             if (areInvisibleElementsAllowed || child.isVisibleToUser()) {
                 children.add(take(child, index, depth + 1, includedAttributes));
             }
+        }
+        if (!nullNodeIndexes.isEmpty()) {
+            Logger.info(String.format(
+                    "The following child nodes of %s are nulls: %s", node, nullNodeIndexes
+            ));
         }
         return children;
     }

@@ -18,8 +18,10 @@ package io.appium.uiautomator2.model.api.gestures;
 
 import io.appium.uiautomator2.model.api.BaseModel;
 import io.appium.uiautomator2.model.api.ElementModel;
+import io.appium.uiautomator2.model.api.FindElementModel;
 
 public class ClickModel extends BaseModel {
     public ElementModel origin;
+    public FindElementModel locator;
     public PointModel offset;
 }

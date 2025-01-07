@@ -17,12 +17,17 @@
 package io.appium.uiautomator2.model;
 
 import android.graphics.Rect;
+import android.os.Bundle;
+import android.text.TextUtils;
+import android.view.accessibility.AccessibilityNodeInfo;
 
 import androidx.annotation.Nullable;
 import androidx.test.uiautomator.Direction;
 import androidx.test.uiautomator.UiObjectNotFoundException;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.UUID;
@@ -42,6 +47,7 @@ import static io.appium.uiautomator2.utils.StringHelpers.isBlank;
 
 public abstract class BaseElement implements AndroidElement {
     protected static final String ATTRIBUTE_PREFIX = "attribute/";
+    protected static final String EXTRAS_SEPARATOR = ";";
 
     private String id = UUID.randomUUID().toString();
     private final By by;
@@ -242,5 +248,25 @@ public abstract class BaseElement implements AndroidElement {
                 && Objects.equals(by, otherEl.by)
                 && Objects.equals(contextId, otherEl.contextId)
                 && this.isSingleMatch == otherEl.isSingleMatch;
+    }
+
+    /**
+     * Returns the string by combining all of keys/values in the given
+     * AccessibilityNodeInfo's extras. Separator is ";".
+     * "extras" is https://developer.android.com/reference/android/view/accessibility/AccessibilityNodeInfo#getExtras()
+     *
+     * @param nodeInfo An AccessibilityNodeInfo instance
+     * @return the string of extra bundles, or null
+     */
+    @Nullable
+    public static String getExtrasAsString(AccessibilityNodeInfo nodeInfo) {
+        List<String> extras = new ArrayList<>();
+        Bundle extraBundle = nodeInfo.getExtras();
+        for (String key : extraBundle.keySet()) {
+            if (extraBundle.get(key) != null) {
+                extras.add(String.format("%s=%s", key, extraBundle.get(key)));
+            }
+        }
+        return TextUtils.join(EXTRAS_SEPARATOR, extras);
     }
 }
